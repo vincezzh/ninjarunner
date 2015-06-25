@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Debugging</key>
+	<dict>
+		<key>ALL-ShowFrameRate</key>
+		<true/>
+		<key>ALL-ShowNodeCount</key>
+		<true/>
+		<key>IOS-ShowDrawCount</key>
+		<false/>
+		<key>IOS-ShowQuadCount</key>
+		<false/>
+		<key>IOS-ShowPhysics</key>
+		<false/>
+		<key>IOS-ShowFields</key>
+		<false/>
+	</dict>
+	<key>Defaults</key>
+	<dict>
+		<key>OSX-Start-FullScreen</key>
+		<false/>
+		<key>OSX-SelectedResolution</key>
+		<integer>0</integer>
+		<key>OSX-Resolutions</key>
+		<array>
+			<dict>
+				<key>Size-Width</key>
+				<integer>1024</integer>
+				<key>Size-Height</key>
+				<integer>768</integer>
+			</dict>
+		</array>
+		<key>ALL-Introduce</key>
+		<false/>
+	</dict>
+	<key>GameParams</key>
+	<dict/>
+</dict>
+</plist>
