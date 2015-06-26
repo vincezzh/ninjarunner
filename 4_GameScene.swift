@@ -31,7 +31,10 @@ class GameScene: SGScene {
     
     
     // Layers
-    
+    var layerBackground01Static = SKNode()
+    var layerBackground02Slow = LayerBackground()
+    var layerBackground03Fask = LayerBackground()
+    var layerGameWorld: LayerWorld?
     
     // States
     
@@ -40,15 +43,60 @@ class GameScene: SGScene {
     
     
     override func didMoveToView(view: SKView) {
+        
         assignLayers()
         setupLayers()
+        
     }
     
     func assignLayers() {
         
+        addChild(layerBackground01Static)
+        addChild(layerBackground02Slow)
+        layerBackground02Slow.layerVelocity = CGPoint(x: -50.0, y: 0.0)
+        addChild(layerBackground03Fask)
+        layerBackground03Fask.layerVelocity = CGPoint(x: -100.0, y: 0.0)
+        layerGameWorld = tileMapLayerFromFileNamed("Level1.txt")
+        if layerGameWorld != nil {
+            layerGameWorld!.layerVelocity = CGPoint(x: -160, y: 0)
+            addChild(layerGameWorld!)
+        }
     }
     
     func setupLayers() {
+        
+        let background = SKSpriteNode(imageNamed: "BG001")
+        background.posByCanvas(0.5, y: 0.5)
+        background.zPosition = -1
+        layerBackground01Static.addChild(background)
+        
+        let background2 = SKSpriteNode(imageNamed: "BG002")
+        background2.posByCanvas(0.0, y: 0.0)
+        background2.anchorPoint = CGPointZero
+        background2.zPosition = 1
+        background2.name = "A"
+        layerBackground02Slow.addChild(background2)
+        
+        let background3 = SKSpriteNode(imageNamed: "BG002")
+        background3.posByCanvas(1.0, y: 0.0)
+        background3.anchorPoint = CGPointZero
+        background3.zPosition = 1
+        background3.name = "B"
+        layerBackground02Slow.addChild(background3)
+        
+        let background4 = SKSpriteNode(imageNamed: "BG003")
+        background4.position = CGPointZero
+        background4.anchorPoint = CGPointZero
+        background4.zPosition = 2
+        background4.name = "A"
+        layerBackground03Fask.addChild(background4)
+        
+        let background5 = SKSpriteNode(imageNamed: "BG003")
+        background5.position = CGPoint(x: background4.size.width, y: 0.0)
+        background5.anchorPoint = CGPointZero
+        background5.zPosition = 2
+        background5.name = "B"
+        layerBackground03Fask.addChild(background5)
         
     }
     
@@ -85,6 +133,9 @@ class GameScene: SGScene {
         // Update Game
         if currentGameState == GameState.gameActive {
             
+            // Update Scene and Layers
+            layerBackground02Slow.update(dt, affectAllNodes: true, parallax: true)
+            layerBackground03Fask.update(dt, affectAllNodes: true, parallax: true)
         }
         
     }
@@ -95,6 +146,33 @@ class GameScene: SGScene {
     }
     
     func didEndContact(contact: SKPhysicsContact) {
+        
+    }
+    
+    // Event 
+    func triggerWithCommand(command:String) {
+        
+//        switch command {
+//        case "finish-level":
+//            
+//            let post = PostScreen(size: scene!.size)
+//            
+//            post.level = currentLevel
+//            post.win = true
+//            post.gems = gemsCollected
+//            
+//            post.scaleMode = scaleMode
+//            let transition = SKTransition.fadeWithDuration(0.6)
+//            view?.presentScene(post, transition: transition)
+//            
+//        case "add-gem":
+//            
+//            self.runAction(sndCollect)
+//            gemsCollected++
+//            
+//        default:
+//            break
+//        }
         
     }
     
