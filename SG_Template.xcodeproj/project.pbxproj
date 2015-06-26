@@ -144,6 +144,10 @@
 		6123B1221B3CAFFD0033BE22 /* Destructible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6123B1201B3CAFFD0033BE22 /* Destructible.swift */; };
 		6123B1241B3CB01C0033BE22 /* Trigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6123B1231B3CB01C0033BE22 /* Trigger.swift */; };
 		6123B1251B3CB01C0033BE22 /* Trigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6123B1231B3CB01C0033BE22 /* Trigger.swift */; };
+		6150C38B1B3CE7A900D2F214 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150C38A1B3CE7A900D2F214 /* Player.swift */; };
+		6150C38C1B3CE7A900D2F214 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150C38A1B3CE7A900D2F214 /* Player.swift */; };
+		6150C38E1B3CFF5000D2F214 /* LayerHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150C38D1B3CFF5000D2F214 /* LayerHUD.swift */; };
+		6150C38F1B3CFF5000D2F214 /* LayerHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150C38D1B3CFF5000D2F214 /* LayerHUD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -245,6 +249,8 @@
 		6123B11D1B3CAF860033BE22 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		6123B1201B3CAFFD0033BE22 /* Destructible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Destructible.swift; sourceTree = "<group>"; };
 		6123B1231B3CB01C0033BE22 /* Trigger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trigger.swift; sourceTree = "<group>"; };
+		6150C38A1B3CE7A900D2F214 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		6150C38D1B3CFF5000D2F214 /* LayerHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerHUD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +428,7 @@
 				6123B10F1B3C9C180033BE22 /* Layer.swift */,
 				6123B1101B3C9C180033BE22 /* LayerBackground.swift */,
 				6123B1181B3CA7750033BE22 /* LayerWorld.swift */,
+				6150C38D1B3CFF5000D2F214 /* LayerHUD.swift */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -432,6 +439,7 @@
 				6123B11D1B3CAF860033BE22 /* Entity.swift */,
 				6123B1231B3CB01C0033BE22 /* Trigger.swift */,
 				6123B1201B3CAFFD0033BE22 /* Destructible.swift */,
+				6150C38A1B3CE7A900D2F214 /* Player.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -823,12 +831,14 @@
 				411112301A876A6A003F0EC4 /* SKTTimingFunctions.swift in Sources */,
 				4111123E1A876B14003F0EC4 /* 0_Introducer.swift in Sources */,
 				411112281A876A6A003F0EC4 /* SKColor+Extensions.swift in Sources */,
+				6150C38E1B3CFF5000D2F214 /* LayerHUD.swift in Sources */,
 				411112221A876A6A003F0EC4 /* Int+Extensions.swift in Sources */,
 				4111122C1A876A6A003F0EC4 /* SKTAudio.swift in Sources */,
 				4111121C1A876A6A003F0EC4 /* CGFloat+Extensions.swift in Sources */,
 				6123B11E1B3CAF860033BE22 /* Entity.swift in Sources */,
 				4111122E1A876A6A003F0EC4 /* SKTEffects.swift in Sources */,
 				411112321A876A6A003F0EC4 /* Vector3.swift in Sources */,
+				6150C38B1B3CE7A900D2F214 /* Player.swift in Sources */,
 				411112071A876A5E003F0EC4 /* SGExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -856,11 +866,13 @@
 				4111121F1A876A6A003F0EC4 /* CGPoint+Extensions.swift in Sources */,
 				4111121D1A876A6A003F0EC4 /* CGFloat+Extensions.swift in Sources */,
 				411111D21A876824003F0EC4 /* AppDelegate.swift in Sources */,
+				6150C38C1B3CE7A900D2F214 /* Player.swift in Sources */,
 				4111123F1A876B14003F0EC4 /* 0_Introducer.swift in Sources */,
 				6123B11F1B3CAF860033BE22 /* Entity.swift in Sources */,
 				411112361A876A7D003F0EC4 /* SGAssetManager.swift in Sources */,
 				4111122D1A876A6A003F0EC4 /* SKTAudio.swift in Sources */,
 				411112081A876A5E003F0EC4 /* SGExtensions.swift in Sources */,
+				6150C38F1B3CFF5000D2F214 /* LayerHUD.swift in Sources */,
 				6123B10E1B3C8CDD0033BE22 /* 4_GameScene.swift in Sources */,
 				4111122B1A876A6A003F0EC4 /* SKNode+Extensions.swift in Sources */,
 				411112251A876A6A003F0EC4 /* SKAction+Extensions.swift in Sources */,
