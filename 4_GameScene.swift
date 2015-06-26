@@ -28,13 +28,16 @@ class GameScene: SGScene {
     var dt: NSTimeInterval = 0
     
     // Entities
-    
+    var playerNinja: Player?
     
     // Layers
     var layerBackground01Static = SKNode()
     var layerBackground02Slow = LayerBackground()
     var layerBackground03Fask = LayerBackground()
     var layerGameWorld: LayerWorld?
+    var layerCharacter = SKNode()
+    
+    var layerHUD = LayerHUD()
     
     // States
     
@@ -60,7 +63,10 @@ class GameScene: SGScene {
         if layerGameWorld != nil {
             layerGameWorld!.layerVelocity = CGPoint(x: -160, y: 0)
             addChild(layerGameWorld!)
+            
+            layerGameWorld!.addChild(layerCharacter)
         }
+        addChild(layerHUD)
     }
     
     func setupLayers() {
@@ -98,6 +104,9 @@ class GameScene: SGScene {
         background5.name = "B"
         layerBackground03Fask.addChild(background5)
         
+        playerNinja = Player(entityPosition: CGPoint(x: self.size.width * 0.3, y: self.size.height * 0.4), entitySize: CGSize(width: 123.75, height: 134.0), entID: ninjaIndex)
+        playerNinja!.anchorPoint = CGPoint(x: 1.0, y: 0.0)
+        layerCharacter.addChild(playerNinja!)
     }
     
     // Interact with Touch or Mouse
@@ -136,6 +145,10 @@ class GameScene: SGScene {
             // Update Scene and Layers
             layerBackground02Slow.update(dt, affectAllNodes: true, parallax: true)
             layerBackground03Fask.update(dt, affectAllNodes: true, parallax: true)
+            layerGameWorld?.update(dt, affectAllNodes: true, parallax: true)
+            
+            // Update Player
+            playerNinja?.update(dt)
         }
         
     }
