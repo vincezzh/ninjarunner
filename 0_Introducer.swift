@@ -77,13 +77,18 @@ class Introducer: SKScene {
     isLoading = true
     
     //Prepare textures to load
-    var textureAtlasesArray : [SKTextureAtlas] = []
-    let atlas01 = SKTextureAtlas(named: "SampleAssets")
+    var textureAtlasesArray: [SKTextureAtlas] = []
+    let atlas01 = SKTextureAtlas(named: "Tiles")
     textureAtlasesArray.append(atlas01)
+    let atlas02 = SKTextureAtlas(named: "Female")
+    textureAtlasesArray.append(atlas02)
+    let atlas03 = SKTextureAtlas(named: "Male")
+    textureAtlasesArray.append(atlas03)
 
     
     //Prepare sounds to load
-    
+    SKTAudio.sharedInstance().playBackgroundMusic("BangBang_0.mp3")
+    SKTAudio.sharedInstance().backgroundMusicPlayer?.volume = 0.4
     
     SKTextureAtlas.preloadTextureAtlases(textureAtlasesArray, withCompletionHandler: {
       gameTextures = textureAtlasesArray

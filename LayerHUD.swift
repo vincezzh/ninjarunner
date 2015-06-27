@@ -56,13 +56,27 @@ class LayerHUD: SKNode {
         throwButton.text = "Throw"
         throwButton.name = "throwButton"
         addChild(throwButton)
+        
+        throwCount = SKLabelNode(fontNamed: "MarkerFelt-Wide")
+        throwCount.fontSize = 32
+        throwCount.posByScreen(0.5, y: 0.02)
+        throwCount.fontColor = SKColor.whiteColor()
+        throwCount.alpha = 0.8
+        throwCount.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center
+        throwCount.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Bottom
+        throwCount.zPosition = 500
+        throwCount.text = "Daggers: 3"
+        throwCount.name = "throwButton"
+        addChild(throwCount)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("")
+        fatalError("init(coder) has not been implemented!")
     }
     
     func update(delta: CFTimeInterval) {
+        
+        throwCount.text = "Dagger: \((3 - (self.parent as! GameScene).layerProjectile.children.count))"
         
     }
     

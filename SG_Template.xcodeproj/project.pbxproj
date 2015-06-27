@@ -148,6 +148,18 @@
 		6150C38C1B3CE7A900D2F214 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150C38A1B3CE7A900D2F214 /* Player.swift */; };
 		6150C38E1B3CFF5000D2F214 /* LayerHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150C38D1B3CFF5000D2F214 /* LayerHUD.swift */; };
 		6150C38F1B3CFF5000D2F214 /* LayerHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150C38D1B3CFF5000D2F214 /* LayerHUD.swift */; };
+		61DDF5341B3D81BF0073D5AD /* ThrowWeapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDF5331B3D81BF0073D5AD /* ThrowWeapon.swift */; };
+		61DDF5351B3D81BF0073D5AD /* ThrowWeapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDF5331B3D81BF0073D5AD /* ThrowWeapon.swift */; };
+		61DDF5371B3D82B50073D5AD /* LayerProjectiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDF5361B3D82B50073D5AD /* LayerProjectiles.swift */; };
+		61DDF5381B3D82B50073D5AD /* LayerProjectiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDF5361B3D82B50073D5AD /* LayerProjectiles.swift */; };
+		61DDF53A1B3DCDA60073D5AD /* 5_PostScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDF5391B3DCDA60073D5AD /* 5_PostScreen.swift */; };
+		61DDF53B1B3DCDA60073D5AD /* 5_PostScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDF5391B3DCDA60073D5AD /* 5_PostScreen.swift */; };
+		61DDF53D1B3DD6FB0073D5AD /* 2_CharSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDF53C1B3DD6FB0073D5AD /* 2_CharSelect.swift */; };
+		61DDF53E1B3DD6FB0073D5AD /* 2_CharSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDF53C1B3DD6FB0073D5AD /* 2_CharSelect.swift */; };
+		61DDF5401B3DE30D0073D5AD /* 3_LevelSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDF53F1B3DE30D0073D5AD /* 3_LevelSelect.swift */; };
+		61DDF5411B3DE30D0073D5AD /* 3_LevelSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDF53F1B3DE30D0073D5AD /* 3_LevelSelect.swift */; };
+		61DDF54D1B3DFBD50073D5AD /* libSSBitmapFont.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61DDF5471B3DFBD50073D5AD /* libSSBitmapFont.a */; };
+		61DDF5501B3DFBD50073D5AD /* libSSBitmapFontOSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61DDF54C1B3DFBD50073D5AD /* libSSBitmapFontOSX.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,6 +263,19 @@
 		6123B1231B3CB01C0033BE22 /* Trigger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trigger.swift; sourceTree = "<group>"; };
 		6150C38A1B3CE7A900D2F214 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		6150C38D1B3CFF5000D2F214 /* LayerHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerHUD.swift; sourceTree = "<group>"; };
+		61DDF5331B3D81BF0073D5AD /* ThrowWeapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThrowWeapon.swift; sourceTree = "<group>"; };
+		61DDF5361B3D82B50073D5AD /* LayerProjectiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerProjectiles.swift; sourceTree = "<group>"; };
+		61DDF5391B3DCDA60073D5AD /* 5_PostScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 5_PostScreen.swift; sourceTree = "<group>"; };
+		61DDF53C1B3DD6FB0073D5AD /* 2_CharSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 2_CharSelect.swift; sourceTree = "<group>"; };
+		61DDF53F1B3DE30D0073D5AD /* 3_LevelSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3_LevelSelect.swift; sourceTree = "<group>"; };
+		61DDF5451B3DFBD50073D5AD /* SSBitmapFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBitmapFont.h; sourceTree = "<group>"; };
+		61DDF5461B3DFBD50073D5AD /* SSBitmapFontLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBitmapFontLabelNode.h; sourceTree = "<group>"; };
+		61DDF5471B3DFBD50073D5AD /* libSSBitmapFont.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSSBitmapFont.a; sourceTree = "<group>"; };
+		61DDF54A1B3DFBD50073D5AD /* SSBitmapFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBitmapFont.h; sourceTree = "<group>"; };
+		61DDF54B1B3DFBD50073D5AD /* SSBitmapFontLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBitmapFontLabelNode.h; sourceTree = "<group>"; };
+		61DDF54C1B3DFBD50073D5AD /* libSSBitmapFontOSX.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSSBitmapFontOSX.a; sourceTree = "<group>"; };
+		61DDF5511B3DFC510073D5AD /* SG_Template-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SG_Template-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		61DDF5521B3DFC510073D5AD /* SG_Template_Mac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SG_Template_Mac-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +283,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61DDF54D1B3DFBD50073D5AD /* libSSBitmapFont.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +298,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61DDF5501B3DFBD50073D5AD /* libSSBitmapFontOSX.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +337,7 @@
 		411111A21A8767ED003F0EC4 /* iOS Controller */ = {
 			isa = PBXGroup;
 			children = (
+				61DDF5511B3DFC510073D5AD /* SG_Template-Bridging-Header.h */,
 				411111A51A8767ED003F0EC4 /* AppDelegate.swift */,
 				411111AB1A8767ED003F0EC4 /* GameViewController.swift */,
 				411111AD1A8767ED003F0EC4 /* Main.storyboard */,
@@ -349,6 +377,7 @@
 		411111CE1A876824003F0EC4 /* OSX Controller */ = {
 			isa = PBXGroup;
 			children = (
+				61DDF5521B3DFC510073D5AD /* SG_Template_Mac-Bridging-Header.h */,
 				411111D11A876824003F0EC4 /* AppDelegate.swift */,
 				411111D71A876824003F0EC4 /* Images.xcassets */,
 				411111D91A876824003F0EC4 /* MainMenu.xib */,
@@ -429,6 +458,7 @@
 				6123B1101B3C9C180033BE22 /* LayerBackground.swift */,
 				6123B1181B3CA7750033BE22 /* LayerWorld.swift */,
 				6150C38D1B3CFF5000D2F214 /* LayerHUD.swift */,
+				61DDF5361B3D82B50073D5AD /* LayerProjectiles.swift */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -439,6 +469,7 @@
 				6123B11D1B3CAF860033BE22 /* Entity.swift */,
 				6123B1231B3CB01C0033BE22 /* Trigger.swift */,
 				6123B1201B3CAFFD0033BE22 /* Destructible.swift */,
+				61DDF5331B3D81BF0073D5AD /* ThrowWeapon.swift */,
 				6150C38A1B3CE7A900D2F214 /* Player.swift */,
 			);
 			name = Entities;
@@ -449,7 +480,10 @@
 			children = (
 				4111123D1A876B14003F0EC4 /* 0_Introducer.swift */,
 				6123B1091B3C85630033BE22 /* 1_MainMenu.swift */,
+				61DDF53C1B3DD6FB0073D5AD /* 2_CharSelect.swift */,
+				61DDF53F1B3DE30D0073D5AD /* 3_LevelSelect.swift */,
 				6123B10C1B3C8CDC0033BE22 /* 4_GameScene.swift */,
+				61DDF5391B3DCDA60073D5AD /* 5_PostScreen.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -457,6 +491,8 @@
 		411111F81A8769FE003F0EC4 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				61DDF5421B3DFBD50073D5AD /* libSSBitmapFont */,
+				61DDF5481B3DFBD50073D5AD /* libSSBitmapFontOSX */,
 				411112001A876A49003F0EC4 /* SG-Engine */,
 				411111FF1A876A40003F0EC4 /* SKTUtils */,
 			);
@@ -574,6 +610,50 @@
 				411112041A876A5E003F0EC4 /* SGGameKit.swift */,
 			);
 			name = "SG-Engine";
+			sourceTree = "<group>";
+		};
+		61DDF5421B3DFBD50073D5AD /* libSSBitmapFont */ = {
+			isa = PBXGroup;
+			children = (
+				61DDF5431B3DFBD50073D5AD /* include */,
+				61DDF5471B3DFBD50073D5AD /* libSSBitmapFont.a */,
+			);
+			path = libSSBitmapFont;
+			sourceTree = "<group>";
+		};
+		61DDF5431B3DFBD50073D5AD /* include */ = {
+			isa = PBXGroup;
+			children = (
+				61DDF5441B3DFBD50073D5AD /* SSBitmapFont */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		61DDF5441B3DFBD50073D5AD /* SSBitmapFont */ = {
+			isa = PBXGroup;
+			children = (
+				61DDF5451B3DFBD50073D5AD /* SSBitmapFont.h */,
+				61DDF5461B3DFBD50073D5AD /* SSBitmapFontLabelNode.h */,
+			);
+			path = SSBitmapFont;
+			sourceTree = "<group>";
+		};
+		61DDF5481B3DFBD50073D5AD /* libSSBitmapFontOSX */ = {
+			isa = PBXGroup;
+			children = (
+				61DDF5491B3DFBD50073D5AD /* include */,
+				61DDF54C1B3DFBD50073D5AD /* libSSBitmapFontOSX.a */,
+			);
+			path = libSSBitmapFontOSX;
+			sourceTree = "<group>";
+		};
+		61DDF5491B3DFBD50073D5AD /* include */ = {
+			isa = PBXGroup;
+			children = (
+				61DDF54A1B3DFBD50073D5AD /* SSBitmapFont.h */,
+				61DDF54B1B3DFBD50073D5AD /* SSBitmapFontLabelNode.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -819,13 +899,17 @@
 				4111120B1A876A5E003F0EC4 /* SGGameKit.swift in Sources */,
 				411111AC1A8767ED003F0EC4 /* GameViewController.swift in Sources */,
 				6123B1111B3C9C180033BE22 /* Layer.swift in Sources */,
+				61DDF5341B3D81BF0073D5AD /* ThrowWeapon.swift in Sources */,
+				61DDF53D1B3DD6FB0073D5AD /* 2_CharSelect.swift in Sources */,
 				4111121E1A876A6A003F0EC4 /* CGPoint+Extensions.swift in Sources */,
 				6123B1211B3CAFFD0033BE22 /* Destructible.swift in Sources */,
 				411112351A876A7D003F0EC4 /* SGAssetManager.swift in Sources */,
 				411112261A876A6A003F0EC4 /* SKAction+SpecialEffects.swift in Sources */,
+				61DDF5401B3DE30D0073D5AD /* 3_LevelSelect.swift in Sources */,
 				6123B10D1B3C8CDD0033BE22 /* 4_GameScene.swift in Sources */,
 				6123B1241B3CB01C0033BE22 /* Trigger.swift in Sources */,
 				411111A61A8767ED003F0EC4 /* AppDelegate.swift in Sources */,
+				61DDF5371B3D82B50073D5AD /* LayerProjectiles.swift in Sources */,
 				6123B11B1B3CAF130033BE22 /* TileMapLayerLoader.swift in Sources */,
 				6123B1191B3CA7750033BE22 /* LayerWorld.swift in Sources */,
 				411112301A876A6A003F0EC4 /* SKTTimingFunctions.swift in Sources */,
@@ -840,6 +924,7 @@
 				411112321A876A6A003F0EC4 /* Vector3.swift in Sources */,
 				6150C38B1B3CE7A900D2F214 /* Player.swift in Sources */,
 				411112071A876A5E003F0EC4 /* SGExtensions.swift in Sources */,
+				61DDF53A1B3DCDA60073D5AD /* 5_PostScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -857,8 +942,10 @@
 			files = (
 				411112061A876A5E003F0EC4 /* SGScene.swift in Sources */,
 				6123B10B1B3C85630033BE22 /* 1_MainMenu.swift in Sources */,
+				61DDF53E1B3DD6FB0073D5AD /* 2_CharSelect.swift in Sources */,
 				411112311A876A6A003F0EC4 /* SKTTimingFunctions.swift in Sources */,
 				6123B1121B3C9C180033BE22 /* Layer.swift in Sources */,
+				61DDF53B1B3DCDA60073D5AD /* 5_PostScreen.swift in Sources */,
 				6123B1251B3CB01C0033BE22 /* Trigger.swift in Sources */,
 				411112211A876A6A003F0EC4 /* CGVector+Extensions.swift in Sources */,
 				6123B1221B3CAFFD0033BE22 /* Destructible.swift in Sources */,
@@ -873,6 +960,7 @@
 				4111122D1A876A6A003F0EC4 /* SKTAudio.swift in Sources */,
 				411112081A876A5E003F0EC4 /* SGExtensions.swift in Sources */,
 				6150C38F1B3CFF5000D2F214 /* LayerHUD.swift in Sources */,
+				61DDF5381B3D82B50073D5AD /* LayerProjectiles.swift in Sources */,
 				6123B10E1B3C8CDD0033BE22 /* 4_GameScene.swift in Sources */,
 				4111122B1A876A6A003F0EC4 /* SKNode+Extensions.swift in Sources */,
 				411112251A876A6A003F0EC4 /* SKAction+Extensions.swift in Sources */,
@@ -880,8 +968,10 @@
 				6123B11A1B3CA7750033BE22 /* LayerWorld.swift in Sources */,
 				4111120C1A876A5E003F0EC4 /* SGGameKit.swift in Sources */,
 				4111120A1A876A5E003F0EC4 /* SGResolution.swift in Sources */,
+				61DDF5351B3D81BF0073D5AD /* ThrowWeapon.swift in Sources */,
 				4111122F1A876A6A003F0EC4 /* SKTEffects.swift in Sources */,
 				411112231A876A6A003F0EC4 /* Int+Extensions.swift in Sources */,
+				61DDF5411B3DE30D0073D5AD /* 3_LevelSelect.swift in Sources */,
 				411112331A876A6A003F0EC4 /* Vector3.swift in Sources */,
 				411112291A876A6A003F0EC4 /* SKColor+Extensions.swift in Sources */,
 				6123B1141B3C9C180033BE22 /* LayerBackground.swift in Sources */,
@@ -1014,10 +1104,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SG_Template/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libSSBitmapFont",
+					"$(PROJECT_DIR)/libSSBitmapFontOSX",
+				);
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SG_Template-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1025,9 +1123,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SG_Template/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libSSBitmapFont",
+					"$(PROJECT_DIR)/libSSBitmapFontOSX",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SG_Template-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -1069,6 +1174,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1077,10 +1183,17 @@
 				);
 				INFOPLIST_FILE = SG_Template_Mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libSSBitmapFont",
+					"$(PROJECT_DIR)/libSSBitmapFontOSX",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "SG_Template_Mac-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1088,14 +1201,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = SG_Template_Mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libSSBitmapFont",
+					"$(PROJECT_DIR)/libSSBitmapFontOSX",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "SG_Template_Mac-Bridging-Header.h";
 			};
 			name = Release;
 		};

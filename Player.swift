@@ -24,6 +24,8 @@ class Player: Entity {
     var animJumpThrow: SKAction?
     
     // Sounds
+    var soundJump: SKAction?
+    var soundThrow: SKAction?
     
     // State
     var isOnTheGround = true
@@ -36,6 +38,48 @@ class Player: Entity {
     override func update(delta: CFTimeInterval) {
         
         position = position + CGPoint(x: delta * 160, y: 0.0)
+        
+        // Jumping
+        // Jump while on the ground
+        if isOnTheGround == true && jumpPressedDown == true {
+            self.parent!.runAction(soundJump!)
+            isOnTheGround = false
+            isThrowing = false
+            self.removeAllActions()
+            self.runAction(animJumping)
+            groundY = position.y - 1
+            isJumping = true
+        }
+        
+        if isJumping == true {
+            physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 55.0))
+            if position.y - groundY > 57 || (position.y <= previousY && position.y - groundY > 2) {
+                isJumping = false
+            }
+            
+        }
+        
+        // If you are not jumping up and on the ground, check whether you have stopped falling
+        if isJumping == false && isOnTheGround == false && position.y == previousY {
+            isOnTheGround = true
+            removeAllActions()
+            isThrowing = false
+            runAction(animRunning)
+        }
+        previousY = position.y
+        
+        // Throwing
+        if throwPressedDown && isThrowing == false && (self.parent?.parent?.parent as! GameScene).layerProjectile.children.count < 3 {
+            self.parent!.runAction(soundThrow!)
+            isThrowing = true
+            self.removeAllActions()
+            self.runAction(SKAction.sequence([animThrow!, SKAction.runBlock({ () -> Void in
+                let throw = ThrowWeapon(entityPosition: CGPoint(x: self.position.x, y: self.position.y + self.size.height / 2), entitySize: CGSize(width: 16, height: 80), entID: 1)
+                let scene = self.parent?.parent?.parent as! GameScene
+                scene.layerProjectile.addChild(throw)
+                self.isThrowing = false
+            }), animRunning!]))
+        }
         
     }
     
@@ -73,6 +117,9 @@ class Player: Entity {
             animJumping = prepareAnimationForDictionary(myChar["Anim_Jump"] as! NSDictionary, repeated: false)
             animDying = prepareAnimationForDictionary(myChar["Anim_Death"] as! NSDictionary, repeated: false)
             animThrow = prepareAnimationForDictionary(myChar["Anim_Throw"] as! NSDictionary, repeated: false)
+            
+            soundJump = SKAction.playSoundFileNamed("146726__fins__jumping.wav", waitForCompletion: false)
+            soundThrow = SKAction.playSoundFileNamed("134935__ztrees1__whoosh.wav", waitForCompletion: false)
             
             self.runAction(animRunning!)
             

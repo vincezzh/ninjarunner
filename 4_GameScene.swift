@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene: SGScene {
+class GameScene: SGScene, SKPhysicsContactDelegate {
     
     // Instance
     enum GameState {
@@ -36,19 +36,22 @@ class GameScene: SGScene {
     var layerBackground03Fask = LayerBackground()
     var layerGameWorld: LayerWorld?
     var layerCharacter = SKNode()
-    
+    var layerProjectile = LayerProjectiles()
     var layerHUD = LayerHUD()
     
     // States
-    
+    var gemsCollected = 0
     
     // Sounds
-    
+    let soundPause = SKAction.playSoundFileNamed("113093__edgardedition__click3.wav", waitForCompletion: false)
+    let soundCollect = SKAction.playSoundFileNamed("135936__bradwesson__collectcoin.wav", waitForCompletion: false)
     
     override func didMoveToView(view: SKView) {
         
         assignLayers()
         setupLayers()
+        
+        physicsWorld.contactDelegate = self
         
     }
     
@@ -59,12 +62,13 @@ class GameScene: SGScene {
         layerBackground02Slow.layerVelocity = CGPoint(x: -50.0, y: 0.0)
         addChild(layerBackground03Fask)
         layerBackground03Fask.layerVelocity = CGPoint(x: -100.0, y: 0.0)
-        layerGameWorld = tileMapLayerFromFileNamed("Level1.txt")
+        layerGameWorld = tileMapLayerFromFileNamed(currentLevel!)
         if layerGameWorld != nil {
             layerGameWorld!.layerVelocity = CGPoint(x: -160, y: 0)
             addChild(layerGameWorld!)
             
             layerGameWorld!.addChild(layerCharacter)
+            layerGameWorld!.addChild(layerProjectile)
         }
         addChild(layerHUD)
     }
@@ -112,19 +116,73 @@ class GameScene: SGScene {
     // Interact with Touch or Mouse
     override func screenInteractionStarted(location: CGPoint) {
         
+        if location.x < self.size.width / 2 && location.y < self.size.height / 2 {
+            playerNinja?.throwPressedDown = true
+        }
+        
+        if location.x > self.size.width / 2 && location.y < self.size.height / 2 {
+            playerNinja?.jumpPressedDown = true
+        }
+        
+        if location.x > self.size.width * 0.75 && location.y > self.size.height * 0.75 {
+            if currentGameState == GameState.gameActive {
+                currentGameState = GameState.gamePause
+                physicsWorld.speed = 0.0
+                speed = 0.0
+                self.runAction(soundPause)
+            }else {
+                currentGameState = GameState.gameActive
+                physicsWorld.speed = 1.0
+                speed = 1.0
+                self.runAction(soundPause)
+            }
+        }
+        
     }
     
     override func screenInteractionMoved(location: CGPoint) {
+        
+        playerNinja?.jumpPressedDown = false
+        playerNinja?.throwPressedDown = false
         
     }
     
     override func screenInteractionEnded(location: CGPoint) {
         
+        playerNinja?.jumpPressedDown = false
+        playerNinja?.throwPressedDown = false
+        
     }
     
     #if !os(iOS)
     override func handleKeyEvent(event: NSEvent, keyDown: Bool) {
-    
+        for scalar in event.characters! {
+            switch scalar {
+            case "x" where keyDown:
+                playerNinja?.jumpPressedDown = true
+                break
+            case "z" where keyDown:
+                playerNinja?.throwPressedDown = true
+                break
+            case "p" where keyDown:
+                if currentGameState == GameState.gameActive {
+                    currentGameState = GameState.gamePause
+                    physicsWorld.speed = 0.0
+                    speed = 0.0
+                    self.runAction(soundPause)
+                } else {
+                    currentGameState = GameState.gameActive
+                    physicsWorld.speed = 1.0
+                    speed = 1.0
+                    self.runAction(soundPause)
+                }
+                break
+            default:
+                playerNinja?.jumpPressedDown = false
+                playerNinja?.throwPressedDown = false
+                break
+            }
+        }
     }
     #endif
     
@@ -149,12 +207,29 @@ class GameScene: SGScene {
             
             // Update Player
             playerNinja?.update(dt)
+            if playerNinja!.position.x < layerCharacter.position.x * -1 + 60 || playerNinja!.position.y < -30 {
+                currentGameState = GameState.gameDeath
+                playerDied()
+            }
+            layerProjectile.update(dt, affectAllNodes: true, parallax: true)
+            
+            layerHUD.update(dt)
         }
         
     }
     
     // Contact
     func didBeginContact(contact: SKPhysicsContact) {
+        
+        if let node1 = contact.bodyA.node {
+            let entityNode = node1 as! Entity
+            entityNode.collidedWith(contact.bodyB, contact: contact)
+        }
+        
+        if let node2 = contact.bodyB.node {
+            let entityNode = node2 as! Entity
+            entityNode.collidedWith(contact.bodyA, contact: contact)
+        }
         
     }
     
@@ -165,28 +240,40 @@ class GameScene: SGScene {
     // Event 
     func triggerWithCommand(command:String) {
         
-//        switch command {
-//        case "finish-level":
-//            
-//            let post = PostScreen(size: scene!.size)
-//            
-//            post.level = currentLevel
-//            post.win = true
-//            post.gems = gemsCollected
-//            
-//            post.scaleMode = scaleMode
-//            let transition = SKTransition.fadeWithDuration(0.6)
-//            view?.presentScene(post, transition: transition)
-//            
-//        case "add-gem":
-//            
-//            self.runAction(sndCollect)
-//            gemsCollected++
-//            
-//        default:
-//            break
-//        }
+        switch command {
+        case "finish-level":
+            
+            let post = PostScreen(size: scene!.size)
+            
+            post.level = currentLevel
+            post.win = true
+            post.gems = gemsCollected
+            
+            post.scaleMode = scaleMode
+            let transition = SKTransition.fadeWithDuration(0.6)
+            view?.presentScene(post, transition: transition)
+            
+        case "add-gem":
+            
+            self.runAction(soundCollect)
+            gemsCollected++
+            
+        default:
+            break
+        }
         
+    }
+    
+    func playerDied() {
+        let post = PostScreen(size: scene!.size)
+
+        post.level = currentLevel
+        post.win = false
+        post.gems = gemsCollected
+
+        post.scaleMode = scaleMode
+        let transition = SKTransition.fadeWithDuration(0.6)
+        view?.presentScene(post, transition: transition)
     }
     
 }

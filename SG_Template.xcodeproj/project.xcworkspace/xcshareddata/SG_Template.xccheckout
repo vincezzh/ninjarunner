@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E77B3855-8DAC-400F-86F0-43B40DF608CE</string>
 	<key>IDESourceControlProjectName</key>
-	<string>SG_Template</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>F0344D9577576332BE92CEB8850C47759D770AC1</key>
 		<string>https://github.com/vincezzh/ninjarunner.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SG_Template.xcodeproj</string>
+	<string>SG_Template.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F0344D9577576332BE92CEB8850C47759D770AC1</key>
